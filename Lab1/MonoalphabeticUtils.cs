@@ -5,7 +5,7 @@ namespace Lab1 {
         public static string Shift(string input, int offset) {
             var fullAlphabet = alphabet + alphabet.ToLower();
             var alphabetLength = fullAlphabet.Length;
-            var output = "";
+            var output = string.Empty;
             for (var i = 0; i < input.Length; i++) {
                 var c = input[i];
                 var index = fullAlphabet.IndexOf(c);

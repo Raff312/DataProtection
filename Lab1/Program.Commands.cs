@@ -28,6 +28,14 @@ namespace Lab1 {
                 Description = "PermutationDecode",
                 Action = RunPermutationDecode
             },
+            new CommandDefinition("5") {
+                Description = "InverseEncode",
+                Action = RunInverseEncode
+            },
+            new CommandDefinition("6") {
+                Description = "InverseDecode",
+                Action = RunInverseDecode
+            },
             new CommandDefinition("0") {
                 Description = "Exit from program",
                 Action = null
@@ -88,6 +96,30 @@ namespace Lab1 {
             }
 
             var result = PermutationUtils.Decode(input, permutation);
+            Console.WriteLine(result);
+        }
+
+        private static void RunInverseEncode() {
+            var input = Utils.GetValueFromUser<string>("Enter a string: ");
+            
+            if (string.IsNullOrEmpty(input)) {
+                Console.WriteLine("There is no input");
+                return;
+            }
+
+            var result = InverseUtils.Convert(input);
+            Console.WriteLine(result);
+        }
+
+        private static void RunInverseDecode() {
+            var input = Utils.GetValueFromUser<string>("Enter a string: ");
+
+            if (string.IsNullOrEmpty(input)) {
+                Console.WriteLine("There is no input");
+                return;
+            }
+
+            var result = InverseUtils.Convert(input);
             Console.WriteLine(result);
         }
     }

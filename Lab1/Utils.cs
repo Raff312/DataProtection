@@ -23,19 +23,5 @@ namespace Lab1 {
             var convertResult = converter.ConvertFromString(input);
             return convertResult != null ? (T)convertResult : default(T);
         }
-
-        public static IEnumerable<string> WholeEqualChunks(string str, int chunkSize) {
-            CompleteStr(ref str, chunkSize);
-            for (int i = 0; i < str.Length; i += chunkSize) {
-                var value = str.Substring(i, chunkSize);
-                yield return value;
-            }
-        }
-
-        private static void CompleteStr(ref string str, int chunkSize) {
-            for (var i = 0; i < str.Length % chunkSize; i++) {
-                str += "#";
-            }
-        }
     }
 }
