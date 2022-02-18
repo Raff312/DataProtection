@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace Lab1 {
     public static class MonoalphabeticUtils {
         const string alphabet = " АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
@@ -5,19 +7,19 @@ namespace Lab1 {
         public static string Shift(string input, int offset) {
             var fullAlphabet = alphabet + alphabet.ToLower();
             var alphabetLength = fullAlphabet.Length;
-            var output = string.Empty;
+            var output = new StringBuilder(input.Length);
             for (var i = 0; i < input.Length; i++) {
                 var c = input[i];
                 var index = fullAlphabet.IndexOf(c);
                 if (index < 0) {
-                    output += c.ToString();
+                    output.Append(c.ToString());
                 } else {
                     var codeIndex = (alphabetLength + index + offset) % alphabetLength;
-                    output += fullAlphabet[codeIndex];
+                    output.Append(fullAlphabet[codeIndex]);
                 }
             }
 
-            return output;
+            return output.ToString();
         }
     } 
 }
