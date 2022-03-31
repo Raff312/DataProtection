@@ -36,6 +36,8 @@
             this.txtResult = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblKeys = new System.Windows.Forms.Label();
+            this.txtInfo = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -90,7 +92,7 @@
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
             this.txtResult.ReadOnly = true;
-            this.txtResult.Size = new System.Drawing.Size(1086, 231);
+            this.txtResult.Size = new System.Drawing.Size(565, 231);
             this.txtResult.TabIndex = 5;
             // 
             // label3
@@ -110,11 +112,31 @@
             this.lblKeys.Size = new System.Drawing.Size(0, 20);
             this.lblKeys.TabIndex = 7;
             // 
+            // txtInfo
+            // 
+            this.txtInfo.Location = new System.Drawing.Point(583, 360);
+            this.txtInfo.Multiline = true;
+            this.txtInfo.Name = "txtInfo";
+            this.txtInfo.ReadOnly = true;
+            this.txtInfo.Size = new System.Drawing.Size(515, 231);
+            this.txtInfo.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(583, 337);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(218, 20);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "F = (left * right) % int.MaxValue;";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1110, 603);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtInfo);
             this.Controls.Add(this.lblKeys);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtResult);
@@ -140,5 +162,7 @@
         private TextBox txtResult;
         private Label label3;
         private Label lblKeys;
+        private TextBox txtInfo;
+        private Label label4;
     }
 }

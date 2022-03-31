@@ -102,7 +102,7 @@ namespace Lab6
             var decryptionString = string.Empty;
             var encodedSymbolsStr = text.Split(' ');
 
-            for (int i = 0; i < encodedSymbolsStr.Length - 1; i++)
+            for (var i = 0; i < encodedSymbolsStr.Length - 1; i++)
             {
                 var r = _privateKey.ElementAt(_privateKey.Count - 1);
                 var q = _privateKey.ElementAt(_privateKey.Count - 2);
@@ -131,7 +131,6 @@ namespace Lab6
                 var index = 0;
                 for (var j = 0; j < _privateKey.Count - 2; j++)
                 {
-
                     if (indexes.Contains(j))
                     {
                         index += (int)Math.Pow(2, _privateKey.Count - 3 - j);

@@ -60,7 +60,7 @@ namespace Lab7
             var encryptionString = string.Empty;
 
             var rng = RandomNumberGenerator.Create();
-            for (int i = 0; i < text.Length; i++)
+            for (var i = 0; i < text.Length; i++)
             {
                 var y = _publicKey.ElementAt(0);
                 var g = _publicKey.ElementAt(1);
@@ -103,7 +103,7 @@ namespace Lab7
             var decryptionString = string.Empty;
             var encodedString = text.Split(' ');
 
-            for (int i = 0; i < encodedString.Length - 1; i++)
+            for (var i = 0; i < encodedString.Length - 1; i++)
             {
                 var encodedPairs = encodedString[i].Split('|');
                 var p = _publicKey.ElementAt(2);

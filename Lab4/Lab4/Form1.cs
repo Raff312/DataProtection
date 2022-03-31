@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 
 namespace Lab4
 {
@@ -58,9 +58,11 @@ namespace Lab4
 
         private void EncryptInternal(ref int left, ref int right)
         {
+            txtInfo.Text = string.Empty;
             for (int i = 0; i < ROUND_COUNT; i++)
             {
                 int temp = right ^ F(left, _keys.ElementAt(i));
+                txtInfo.Text += $"{i}. Левая часть: {left}, Правая часть: {right}, Ключ: {_keys.ElementAt(i)}, Результат операции: {temp} \r\n";
                 right = left;
                 left = temp;
             }
@@ -100,9 +102,11 @@ namespace Lab4
 
         private void DecryptInternal(ref int left, ref int right)
         {
+            txtInfo.Text = string.Empty;
             for (int i = ROUND_COUNT - 1; i >= 0; i--)
             {
                 int temp = left ^ F(right, _keys.ElementAt(i));
+                txtInfo.Text += $"{i}. Левая часть: {left}, Правая часть: {right}, Ключ: {_keys.ElementAt(i)}, Результат операции: {temp} \r\n";
                 left = right;
                 right = temp;
             }
